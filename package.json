@@ -5,8 +5,8 @@
 	"main": "index.js",
 	"type": "module",
 	"scripts": {
-		"dev": "nodemon index.js",
-		"start": "index node.js"
+		"start": "export NODE_OPTIONS=--openssl-legacy-provider && ./node_modules/.bin/netlify-lambda serve src",
+		"build": "./node_modules/.bin/netlify-lambda build src"
 	},
 	"author": "",
 	"license": "ISC",
@@ -14,6 +14,8 @@
 		"dotenv": "^16.0.3",
 		"express": "^4.18.2",
 		"mongoose": "^6.9.0",
-		"nodemon": "^2.0.20"
+		"netlify-lambda": "^2.0.15",
+		"nodemon": "^2.0.20",
+		"serverless-http": "^3.1.1"
 	}
 }
