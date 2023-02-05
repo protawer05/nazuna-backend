@@ -1,0 +1,19 @@
+{
+	"name": "backend-nazuna",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"dev": "nodemon index.js",
+		"start": "index node.js"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"dotenv": "^16.0.3",
+		"express": "^4.18.2",
+		"mongoose": "^6.9.0",
+		"nodemon": "^2.0.20"
+	}
+}
