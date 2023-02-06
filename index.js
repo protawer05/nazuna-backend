@@ -2,11 +2,8 @@ import * as dotenv from 'dotenv'
 dotenv.config()
 import express from 'express'
 import mongoose from 'mongoose'
-import {
-	postHomework,
-	getHomework,
-	removeHomework,
-} from './controllers/HomeworkController.js'
+import homework from './api/homework.js'
+
 //////////////////////////CONNECT DB///////////////////////////////////////
 mongoose
 	.connect(process.env.DB_URL)
@@ -17,12 +14,9 @@ const app = express()
 app.use(express.json())
 const PORT = process.env.PORT || 4444
 //////////////////////////POST HOMEWORK///////////////////////////////////////
-app.post('/api/homework', postHomework)
-//////////////////////////GET ALL HOMEWORKS////////////////////////////////////////
-app.get('/api/homework', getHomework)
-//////////////////////////REMOVE HOMEWORK////////////////////////////////////////
-app.delete('/api/homework/:id', removeHomework)
+
+app.use('/api/homework', homework)
 //////////////////////////START SERVER////////////////////////////////////////
-app.listen(PORT)
+app.listen(PORT, () => console.log(`server started on ${PORT} port`))
 
 export default app
