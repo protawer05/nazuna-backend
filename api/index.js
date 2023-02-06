@@ -17,10 +17,10 @@ const app = express()
 app.use(express.json())
 const PORT = process.env.PORT || 4444
 //////////////////////////POST HOMEWORK///////////////////////////////////////
-app.post('/homework', postHomework)
+app.post('/api/homework', postHomework)
 //////////////////////////GET ALL HOMEWORKS////////////////////////////////////////
-app.get('/homework', getHomework)
+app.get('/api/homework', getHomework)
 //////////////////////////REMOVE HOMEWORK////////////////////////////////////////
-app.delete('/homework/:id', removeHomework)
+app.delete('/api/homework/:id', removeHomework)
 //////////////////////////START SERVER////////////////////////////////////////
 module.exports = app
