@@ -23,4 +23,11 @@ app.get('/api/homework', getHomework)
 //////////////////////////REMOVE HOMEWORK////////////////////////////////////////
 app.delete('/api/homework/:id', removeHomework)
 //////////////////////////START SERVER////////////////////////////////////////
+app.listen(PORT, err => {
+	if (err) {
+		console.log(`server is ${err}`)
+	} else {
+		console.log(`server is ok. port: ${PORT}`)
+	}
+})
 module.exports = app
