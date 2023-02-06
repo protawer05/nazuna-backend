@@ -6,7 +6,7 @@ import {
 	postHomework,
 	getHomework,
 	removeHomework,
-} from './controllers/HomeworkController.js'
+} from '../controllers/HomeworkController.js'
 //////////////////////////CONNECT DB///////////////////////////////////////
 mongoose
 	.connect(process.env.DB_URL)
@@ -23,9 +23,4 @@ app.get('/homework', getHomework)
 //////////////////////////REMOVE HOMEWORK////////////////////////////////////////
 app.delete('/homework/:id', removeHomework)
 //////////////////////////START SERVER////////////////////////////////////////
-app.listen(PORT, err => {
-	if (err) {
-		return console.log(err)
-	}
-	console.log(`server is ok, port: ${PORT}`)
-})
+module.exports = app
